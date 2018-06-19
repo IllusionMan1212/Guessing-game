@@ -1,5 +1,8 @@
 program Guessing;
+uses crt;
+
 var myRnd, entry, i, choice : integer;
+    dialog : string;
 
 procedure Easy;
 begin
@@ -13,8 +16,9 @@ begin
       if (entry = myRnd) then
         begin
           writeln('BINGO!!!!');
-          readln;
-          halt;
+          writeln();
+          writeln('Do you want to retry? [Y/N]');
+          readln(dialog);
         end
       else
       if (entry < myRnd) and (i <> 10) then
@@ -28,7 +32,9 @@ begin
         end;
     end;
     writeln('GAME OVER!');
-    readln();
+    writeln();
+    writeln('Do you want to retry? [Y/N]');
+    readln(dialog);
 end;
 
 procedure Medium;
@@ -43,8 +49,9 @@ begin
       if (entry = myRnd) then
         begin
           writeln('BINGO!!!!');
-          readln;
-          halt;
+          writeln();
+          writeln('Do you want to retry? [Y/N]');
+          readln(dialog);
         end
       else
       if (entry < myRnd) and (i <> 5) then
@@ -58,7 +65,9 @@ begin
         end;
     end;
     writeln('GAME OVER!');
-    readln();
+    writeln();
+    writeln('Do you want to retry? [Y/N]');
+    readln(dialog);
 end;
 
 procedure Hard;
@@ -73,8 +82,9 @@ begin
       if (entry = myRnd) then
         begin
           writeln('BINGO!!!!');
-          readln;
-          halt;
+          writeln();
+          writeln('Do you want to retry? [Y/N]');
+          readln(dialog);
         end
       else
       if (entry < myRnd) and (i <> 3) then
@@ -88,23 +98,27 @@ begin
         end;
     end;
     write('GAME OVER!');
-    readln();
+    writeln();
+    writeln('Do you want to retry? [Y/N]');
+    readln(dialog);
 end;
 
 begin
   writeln('Hi and welcome to my first guessing game :)');
   writeln('the program will pick a random number between 1 and 100 and you have to guess it');
   writeln('Good luck!');
-  writeln();
-  writeln();
-  writeln('Select Difficulty');
-  writeln('[1] Press 1 for Easy mode (10 tries)');
-  writeln('[2] Press 2 for Medium mode (5 tries)');
-  writeln('[3] Press 3 for Hard mode (3 tries)');
-  readln(choice);
-  case (choice) of
-  1 : Easy;
-  2 : Medium;
-  3 : Hard;
-  end;
+  readln();
+  repeat
+    clrscr;
+    writeln('Select Difficulty');
+    writeln('[1] Press 1 for Easy mode (10 tries)');
+    writeln('[2] Press 2 for Medium mode (5 tries)');
+    writeln('[3] Press 3 for Hard mode (3 tries)');
+    readln(choice);
+    case (choice) of
+      1 : Easy;
+      2 : Medium;
+      3 : Hard;
+    end;
+  until (dialog = 'n') or (dialog = 'N');
 end.
