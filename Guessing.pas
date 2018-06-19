@@ -16,9 +16,7 @@ begin
       if (entry = myRnd) then
         begin
           writeln('BINGO!!!!');
-          writeln();
-          writeln('Do you want to retry? [Y/N]');
-          readln(dialog);
+            break;
         end
       else
       if (entry < myRnd) and (i <> 10) then
@@ -31,7 +29,10 @@ begin
           write('aim lower');
         end;
     end;
-    writeln('GAME OVER!');
+    if (i = 10) then
+      begin
+        writeln('GAME OVER!');
+      end;
     writeln();
     writeln('Do you want to retry? [Y/N]');
     readln(dialog);
@@ -49,9 +50,7 @@ begin
       if (entry = myRnd) then
         begin
           writeln('BINGO!!!!');
-          writeln();
-          writeln('Do you want to retry? [Y/N]');
-          readln(dialog);
+            break;
         end
       else
       if (entry < myRnd) and (i <> 5) then
@@ -64,7 +63,10 @@ begin
           write('aim lower');
         end;
     end;
-    writeln('GAME OVER!');
+    if (i = 5) then
+      begin
+        writeln('GAME OVER!');
+      end;
     writeln();
     writeln('Do you want to retry? [Y/N]');
     readln(dialog);
@@ -82,9 +84,7 @@ begin
       if (entry = myRnd) then
         begin
           writeln('BINGO!!!!');
-          writeln();
-          writeln('Do you want to retry? [Y/N]');
-          readln(dialog);
+            break;
         end
       else
       if (entry < myRnd) and (i <> 3) then
@@ -97,7 +97,10 @@ begin
           write('aim lower');
         end;
     end;
-    write('GAME OVER!');
+    if (i = 3) then
+      begin
+        write('GAME OVER!');
+      end;
     writeln();
     writeln('Do you want to retry? [Y/N]');
     readln(dialog);
